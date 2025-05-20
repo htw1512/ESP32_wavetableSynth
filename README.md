@@ -54,7 +54,7 @@ Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesize
     *   Verarbeitet Velocity-Informationen.
     *   Einfaches Midi-In Modul realisiert über eine 5pol. DIN Buchse an einem Optokoppler 6N137. Buchse Pin4 an Pin2 an 220Ohm Widerstand, Buchse Pin 5 an Pin 3.
 *   **Benutzeroberfläche (Hardware):**
-    *   Direkte Steuerung vieler Parameter über insgesamt 11 Potentiometer.
+    *   Direkte Steuerung vieler Parameter über insgesamt 11 Potentiometer (10k).
     *   Taster für Wellenformauswahl, Arpeggiator An/Aus und Arpeggiator-Modus.
 *   **Display:**
     *   Unterstützung für ein SSD1306 I2C OLED-Display (128x64 Pixel).
@@ -70,7 +70,7 @@ Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesize
 *   **Mikrocontroller:** ESP32-S3 (Freenove ESP32 WROOM Board)
 *   PCM5102 DAC
 *   Midi-In Shield
-*   OLED 0,96 SDA,SCL
+*   OLED - SDA,SCL Standard Pin 21, Pin22
 *   **Entwicklungsumgebung:** Arduino IDE mit ESP32 Core
 *   **Hauptbibliotheken:**
     *   `driver/i2s_std.h` (ESP-IDF für I2S)
