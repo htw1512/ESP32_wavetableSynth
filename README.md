@@ -1,6 +1,6 @@
 # ESP32-S3 Polyphoner Wavetable-Synthesizer
 
-Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesizer** auf Basis des ESP32-S3 Mikrocontrollers. Der Synthesizer nutzt eine Zwei-Task-Architektur unter FreeRTOS für separate Audioverarbeitungs- und Steuerungslogik und bietet eine Vielzahl von Klanggestaltungsmöglichkeiten durch direkt angeschlossene Potentiometer und Taster.
+Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesizer** auf Basis des ESP32-S3 Mikrocontrollers. Der Synthesizer nutzt eine Zwei-Task-Architektur unter FreeRTOS für separate Audioverarbeitungs- und Steuerungslogik und bietet eine Vielzahl von Klanggestaltungsmöglichkeiten durch direkt angeschlossene Potentiometer und Taster. Die Audioausgabe erfolgt über ein DAC PCM5102.
 
 ## Hauptmerkmale
 
@@ -47,11 +47,12 @@ Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesize
     *   Arpeggiator-Modus wählbar über Taster (an GPIO17).
     *   Feste Arpeggiator-Rate (im Code definiert auf `ARP_STEP_INTERVAL_MS`).
 *   **Audioausgabe:**
-    *   Stereo-Audioausgabe über I2S bei einer Samplerate von 22050 Hz.
+    *   Stereo-Audioausgabe über I2S bei einer Samplerate von 22050 Hz an einem DAC PCM5102 Modul.
     *   16-Bit Audioauflösung.
 *   **MIDI-Eingang:**
     *   Empfängt MIDI Note On, Note Off und andere Standard-MIDI-Nachrichten über `Serial2` (RX an GPIO3).
     *   Verarbeitet Velocity-Informationen.
+    *   Einfaches Midi-In Modul realisiert über eine 5pol. DIN Buchse an einem Optokoppler 6N137. Buchse Pin4 an Pin2 an 220Ohm Widerstand, Buchse Pin 5 an Pin 3.
 *   **Benutzeroberfläche (Hardware):**
     *   Direkte Steuerung vieler Parameter über insgesamt 11 Potentiometer.
     *   Taster für Wellenformauswahl, Arpeggiator An/Aus und Arpeggiator-Modus.
@@ -66,7 +67,10 @@ Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesize
 
 ## Technische Basis
 
-*   **Mikrocontroller:** ESP32-S3
+*   **Mikrocontroller:** ESP32-S3 (Freenove ESP32 WROOM Board)
+*   PCM5102 DAC
+*   Midi-In Shield
+*   OLED 0,96 SDA,SCL
 *   **Entwicklungsumgebung:** Arduino IDE mit ESP32 Core
 *   **Hauptbibliotheken:**
     *   `driver/i2s_std.h` (ESP-IDF für I2S)
