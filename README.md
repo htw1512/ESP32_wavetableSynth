@@ -1,6 +1,6 @@
 # ESP32-S3 Polyphoner Wavetable-Synthesizer
 
-Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesizer** auf Basis des ESP32-S3 Mikrocontrollers. Der Synthesizer nutzt eine Zwei-Task-Architektur unter FreeRTOS für separate Audioverarbeitungs- und Steuerungslogik und bietet eine Vielzahl von Klanggestaltungsmöglichkeiten durch direkt angeschlossene Potentiometer und Taster. Die Audioausgabe erfolgt über ein DAC PCM5102.
+Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesizer** auf Basis des ESP32-S3 Mikrocontrollers. Der Synthesizer nutzt eine Zwei-Task-Architektur unter FreeRTOS für separate Audioverarbeitungs- und Steuerungslogik und bietet eine Vielzahl von Klanggestaltungsmöglichkeiten durch direkt angeschlossene Potentiometer und Taster. Die Audioausgabe erfolgt über ein DAC PCM5102. Das Projekt wurd in enger Zusammenarbeit mit Google Studio AI entwickelt.
 
 ## Hauptmerkmale
 
@@ -86,3 +86,7 @@ Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesize
 *   Dynamische Pulsweitenmodulation (PWM) für Puls-Wellenformen.
 *   Mehr Modulationsziele für den LFO oder zusätzliche LFOs.
 *   Erweiterte Display-Informationen (z.B. grafische Darstellung der Hüllkurve, Parameterwerte).
+
+  ## Codegenerierung und Prüfung mit KI
+  *Google Studio AI in der Gratisversion setzte die Anforderungen in Code um
+  *Letztlich wurde eine spielbare Version erzeugt mit den oben benannten Merkmalen
