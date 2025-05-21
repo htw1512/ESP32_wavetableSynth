@@ -10,7 +10,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/semphr.h"
-// #include <Encoder.h> // Nicht mehr aktiv für Drehfunktion genutzt
+
 
 #include <Wire.h> 
 #include <Adafruit_GFX.h> 
