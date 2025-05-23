@@ -1,10 +1,10 @@
 # ESP32-S3 Polyphoner Wavetable-Synthesizer
 
-Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesizer** auf Basis des ESP32-S3 Mikrocontrollers. Der Synthesizer nutzt eine Zwei-Task-Architektur unter FreeRTOS für separate Audioverarbeitungs- und Steuerungslogik und bietet eine Vielzahl von Klanggestaltungsmöglichkeiten durch direkt angeschlossene Potentiometer und Taster. Die Audioausgabe erfolgt über ein DAC PCM5102. Das Projekt wurde in enger Zusammenarbeit mit Google Studio AI entwickelt.
+Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesizer** auf Basis des ESP32-S3 Mikrocontrollers. Der Synthesizer nutzt eine Zwei-Task-Architektur unter FreeRTOS für separate Audioverarbeitungs- und Steuerungslogik und bietet eine Vielzahl von Klanggestaltungsmöglichkeiten durch direkt angeschlossene Potentiometer und Taster. Die Audioausgabe erfolgt über ein DAC PCM5102. Das Projekt wurde in "enger Zusammenarbeit mit Google Studio AI" entwickelt.
 
 ## Hauptmerkmale
 
-*   **Polyphonie:** Bis zu **8 gleichzeitig spielbare Stimmen**.
+*   **Polyphonie:** Bis zu **8 gleichzeitig spielbare Stimmen** in der Variante mit 22050Khz Sample Rate
 *   **Oszillator pro Stimme:**
     *   Ein Hauptoszillator pro Stimme.
     *   **11 auswählbare Wellenformen:**
@@ -38,11 +38,12 @@ Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesize
     *   **Master Volume:** Globale Lautstärkeregelung über ein Potentiometer (an GPIO12).
 *   **Arpeggiator:**
     *   Integrierter Arpeggiator mit verschiedenen Modi:
-        *   Off
-        *   Up (Aufsteigend)
-        *   Down (Absteigend)
-        *   Up/Down (Auf- und Absteigend)
-        *   Random (Zufällig)
+    * ARP_UP`, `ARP_DOWN`, `ARP_UP_DOWN`, `ARP_RANDOM` (bestehend)
+    *   ARP_OCT_UP`: Spielt das gewählte Pattern (Basis: Up) über mehrere Oktaven aufsteigend.
+    *   ARP_OCT_DOWN`: Spielt das gewählte Pattern (Basis: Up) über mehrere Oktaven absteigend.
+    *   ARP_CHORD`: Spielt alle gehaltenen Noten gleichzeitig als Akkord.
+    *   ARP_ORDER_PLAYED`: Spielt Noten in der Reihenfolge ihres Anschlags.
+    *   Geschwindigkeitsvarianten (`_DOUBLE`, `_HALF`) für Up, Down und Up/Down Pattern.
     *   Arpeggiator An/Aus schaltbar über Taster (an GPIO18).
     *   Arpeggiator-Modus wählbar über Taster (an GPIO17).
     *   Feste Arpeggiator-Rate (im Code definiert auf `ARP_STEP_INTERVAL_MS`).
@@ -64,6 +65,8 @@ Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesize
     *   Mutex (`xSemaphoreHandle`) zur Synchronisation des Zugriffs auf geteilte Voice-Daten.
     *   Software-Debouncing für Taster.
     *   Deadzone-Implementierung für Potentiometer zur Stabilisierung der Nullstellung und an den Endanschlägen.
+## Erweiterter Code mit SampleRate 44,1Khz 16bit
+   *gleicher Funktionsumfang, aber nur 3 stimmig polyphon
 
 ## Technische Basis
 
