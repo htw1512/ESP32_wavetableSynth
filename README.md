@@ -74,6 +74,7 @@ Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesize
 *   PCM5102 DAC
 *   Midi-In Shield
 *   OLED - SDA,SCL Standard Pin 21, Pin22
+*   Einschalter und Power Buchse extern 3,3Volt
 *   **Entwicklungsumgebung:** Arduino IDE mit ESP32 Core
 *   **Hauptbibliotheken:**
     *   `driver/i2s_std.h` (ESP-IDF für I2S)
