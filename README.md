@@ -1,6 +1,6 @@
 # ESP32-S3 Polyphoner Wavetable-Synthesizer
 
-Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesizer** auf Basis des ESP32-S3 Mikrocontrollers. Der Synthesizer nutzt eine Zwei-Task-Architektur unter FreeRTOS für separate Audioverarbeitungs- und Steuerungslogik und bietet eine Vielzahl von Klanggestaltungsmöglichkeiten durch direkt angeschlossene Potentiometer und Taster. Die Audioausgabe erfolgt über ein DAC PCM5102. Das Projekt wurde in "enger Zusammenarbeit mit Google Studio AI" entwickelt.
+Dieses Projekt implementiert einen **8-stimmigen polyphonen Wavetable-Synthesizer** auf Basis des ESP32-S3 Mikrocontrollers. Der Synthesizer nutzt eine Zwei-Task-Architektur unter FreeRTOS für separate Audioverarbeitungs- und Steuerungslogik und bietet eine Vielzahl von Klanggestaltungsmöglichkeiten durch direkt angeschlossene Potentiometer und Taster. Die Audioausgabe erfolgt über ein DAC PCM5102. Das Projekt wurde in "enger Zusammenarbeit mit Google Studio AI" entwickelt. Es wurde versucht einen guten Kompromiss zwischen Audioqualität, Funktionsumfang und Hardware zu erzielen. Dieser Lo-Fi Synth ist gleichzeitig ein LowCost Synth.
 
 ## Hauptmerkmale
 
