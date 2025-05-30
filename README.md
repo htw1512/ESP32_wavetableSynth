@@ -60,13 +60,13 @@ Dieser vielseitige polyphone Synthesizer basiert auf dem ESP32-S3 Mikrocontrolle
 
 Der Synthesizer kann in zwei primären Konfigurationen betrieben werden, die einen Kompromiss zwischen Audioqualität/Polyphonie und CPU-Last darstellen:
 
-### Version 1: "Lo-Fi / High Polyphony" (Beispielkonfiguration)
+### Version 1: "Lo-Fi / High Polyphonie" (Beispielkonfiguration)
 
 *   **Sample Rate**: `22050 Hz`
 *   **Aktive Stimmen (Polyphonie)**: `8 Stimmen`
 *   **Charakteristik**: Diese Konfiguration ermöglicht eine höhere Anzahl gleichzeitig spielbarer Noten, was besonders für komplexe Akkorde oder dichte Arpeggios von Vorteil ist. Die niedrigere Sample Rate kann zu einem "Lo-Fi"-Charakter mit weniger Brillanz in den höchsten Frequenzen und potenziell mehr Aliasing bei sehr hohen Noten führen, was aber auch als klangästhetisches Merkmal geschätzt werden kann.
 
-### Version 2: "Hi-Fi / Focused Polyphony" (Aktuelle Konfiguration im Code)
+### Version 2: "Hi-Fi / Focused Polyphonie" (Aktuelle Konfiguration im Code)
 
 *   **Sample Rate**: `44100 Hz`
 *   **Aktive Stimmen (Polyphonie)**: `3 Stimmen`
